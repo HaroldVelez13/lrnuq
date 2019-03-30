@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
+:root {
+  --main-bg-color: oldlace;
+}
+
+
+body{
+	margin: 0;
+    background-color: var(--main-bg-color);
+}
+
+.lrnuq-bg-color{
+	background-color: rgba(255,255,255,.1);
+}
+
+.row-breadcrumb{
+	margin-top: 2em;
+}
+.principal-content{
+	margin-top: 3em;
+}
+
+#modal1 { 
+	transform: translateY(50%) !important; 
+}
+
+.nav-section{
+	padding: 0px;
+	margin-top: 5rem;
+	position: fixed;
+}
+.btn-up{	
+	position: fixed;
+	right: 2em;
+	bottom:  2em;
+}
+
+.space_left{
+	margin-left: 1em;
+}
+
+.card .card-header  {
+    padding: .5rem 2rem 0px 2rem ;
+    border-radius: 0 0 2px 2px;
+}
+
+.breadcrumb-active{
+	font-size: 1.3em;
+	color: rgba(255,255,255,0.9);
+}
+
+.smally {
+    height: 200px !important;
+}
+
+.item-header{
+	margin: 0px;
+
+}
+.item-btn{
+	margin-left: .5em;
+}
+
+
+.net-field {
+    font-size: 1.3rem;
+}
+.net-field>label {
+	margin-top: 1em;
+    color: #9e9e9e;
+    position: absolute;
+    font-size: 1.2rem;   
+}
+.planta-title{
+	margin-bottom: 10em;
+}
+
+.m-2{
+	margin:2em;
+}
+
+
