@@ -10,6 +10,7 @@ use Amranidev\Ajaxis\Ajaxis;
 use URL;
 use App\Events\ReportCreated;
 use App\Net;
+use Pusher\Laravel\Facades\Pusher;
 
 
 /**
@@ -57,7 +58,8 @@ class ReportController extends Controller
         $report->rate_learning = $request->rate_learning;
         $report->net_id = $net;        
         $report->save();       
-        event( new ReportCreated($report->id,$user));
+        //broadcast( new ReportCreated($report->id,$user))->toOthers();
+         Pusher::trigger('newReport', 'report-created', ['report'=>$report->id, 'user'=>$user]);
         return redirect()->route('user.plant.net.show',['user'=>$user,'plant'=>$plant,'net'=>$net]);
     }
 

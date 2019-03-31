@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "pusher/pusher-http-laravel": "^4.2",
         "pusher/pusher-php-server": "~3.0",
         "spatie/laravel-permission": "^1",
         "vinkla/pusher": "^4.2"

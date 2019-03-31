@@ -7,4 +7,5 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 });
 
 Broadcast::channel('reportCompleted.{report}.{user}', ReportCompleted::class);
+
 Broadcast::channel('newReport.{report}.{user}' , ReportCreated::class);
