@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-03-2019 a las 07:37:39
+-- Tiempo de generación: 31-03-2019 a las 05:33:11
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.13
 
@@ -176,19 +176,40 @@ CREATE TABLE `reports` (
   `rate_learning` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `net_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `completed` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `reports`
 --
 
-INSERT INTO `reports` (`id`, `name`, `type`, `itera`, `rate_learning`, `net_id`, `created_at`, `updated_at`) VALUES
-(1, 'un report', 'netcita', 'sicas', 'mucho', NULL, '2019-03-23 05:51:27', '2019-03-23 06:59:26'),
-(2, 'Editado', 'fgdsfsd', 'gdfgsd', 'gsdfg', 9, '2019-03-23 06:35:52', '2019-03-23 07:05:33'),
-(3, 'editadicimo', 'asdasd', 'asdasd', 'asdasd', 9, '2019-03-23 06:55:28', '2019-03-23 07:05:44'),
-(6, 'yuuuuuuu', 'uuuuuuuuuuu', 'uuuuuuuu', 'uuuuuuuu', 9, '2019-03-23 07:13:13', '2019-03-23 07:13:13'),
-(7, 'sdfsdf', 'sdfsdf', 'sdfsdf', 'sdfsdf', 14, '2019-03-30 04:53:24', '2019-03-30 04:53:24');
+INSERT INTO `reports` (`id`, `name`, `type`, `itera`, `rate_learning`, `net_id`, `created_at`, `updated_at`, `completed`) VALUES
+(1, 'un report', 'netcita', 'sicas', 'mucho', NULL, '2019-03-23 05:51:27', '2019-03-23 06:59:26', 0),
+(2, 'Editado', 'fgdsfsd', 'gdfgsd', 'gsdfg', 9, '2019-03-23 06:35:52', '2019-03-23 07:05:33', 0),
+(3, 'editadicimo', 'asdasd', 'asdasd', 'asdasd', 9, '2019-03-23 06:55:28', '2019-03-23 07:05:44', 0),
+(6, 'yuuuuuuu', 'uuuuuuuuuuu', 'uuuuuuuu', 'uuuuuuuu', 9, '2019-03-23 07:13:13', '2019-03-23 07:13:13', 0),
+(7, 'sdfsdf', 'sdfsdf', 'sdfsdf', 'sdfsdf', 14, '2019-03-30 04:53:24', '2019-03-30 04:53:24', 0),
+(8, 'unolindo', 'dasdasd', 'asdasd', 'asdasd', 9, '2019-03-31 01:50:06', '2019-03-31 01:50:06', 0),
+(9, 'asdasd', 'asdasd', 'asdasd', 'asdasd', 9, '2019-03-31 01:50:34', '2019-03-31 01:50:34', 0),
+(10, 'fghfgh', 'fffffffff', 'ffffffff', 'ffffffff', 9, '2019-03-31 01:52:16', '2019-03-31 01:52:16', 0),
+(11, 'ddd', 'ddd', 'ddd', 'ddd', 9, '2019-03-31 01:54:19', '2019-03-31 01:54:19', 0),
+(12, 'dfghdf', 'dfghdfgh', 'dfghdfgh', 'fghdfgh', 9, '2019-03-31 01:57:52', '2019-03-31 01:57:52', 0),
+(13, 'dfgdfgdfg', 'dfgdfgdf', 'dfgdfg', 'dfgdfg', 9, '2019-03-31 02:02:23', '2019-03-31 02:02:23', 0),
+(14, 'dfgh', 'dfgh', 'dfgh', 'dfgh', 9, '2019-03-31 02:10:13', '2019-03-31 02:10:13', 0),
+(15, 'ffffffff', 'fffffffff', 'ffffffffff', 'fffffffffff', 9, '2019-03-31 02:47:57', '2019-03-31 02:47:57', 0),
+(16, 'asdf', 'asdf', 'asdf', 'asfd', 9, '2019-03-31 02:55:56', '2019-03-31 02:55:56', 0),
+(17, 'asdfasdf', 'asdfasdf', 'asdfasdf', 'asdfasdf', 9, '2019-03-31 02:56:16', '2019-03-31 02:56:16', 0),
+(18, 'sdfgsdf', 'sdfgsdfg', 'sdfgsdfg', 'sdfgsdfg', 9, '2019-03-31 02:58:40', '2019-03-31 02:58:40', 0),
+(19, 'sdfg', 'sdfg', 'sdfg', 'sdfg', 9, '2019-03-31 03:06:12', '2019-03-31 03:06:12', 0),
+(20, 'sdfgsdf', 'sdfgsdf', 'sdfgsd', 'sdfgsdf', 9, '2019-03-31 03:09:31', '2019-03-31 03:09:31', 0),
+(21, 'xcvbxcv', 'cvxc', 'xcvxcv', 'xcvxc', 9, '2019-03-31 03:15:51', '2019-03-31 03:15:51', 0),
+(22, 'xcvbxcv', 'cvxc', 'xcvxcv', 'xcvxc', 9, '2019-03-31 03:16:19', '2019-03-31 03:16:19', 0),
+(23, 'zxcvzxcv', 'zxcvzxcv', 'zxcvzxcv', 'zxcvzxcv', 9, '2019-03-31 03:16:39', '2019-03-31 03:16:39', 0),
+(24, 'asdfasdf', 'asdfas', 'dfasd', 'afsdf', 9, '2019-03-31 03:20:21', '2019-03-31 03:20:21', 0),
+(25, 'sdfg', 'sdfg', 'sdfg', 'sdfg', 9, '2019-03-31 03:22:03', '2019-03-31 03:22:03', 0),
+(26, 'sdfg', 'sdfg', 'sdfg', 'sdfg', 9, '2019-03-31 03:22:40', '2019-03-31 03:22:40', 0),
+(27, 'sdfsdfs', 'sdfsdf', 'sdfsdf', 'dfsdfsdf', 9, '2019-03-31 03:26:58', '2019-03-31 03:26:58', 0);
 
 -- --------------------------------------------------------
 
@@ -277,7 +298,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (3, 'preuba', 'prueba@mail.com', NULL, '$2y$10$ixja0UkYDAPXQoTpbU12T.qCrpJit31hcSPUQEvl8eWxOsJ9I/cPG', 'y29LNc6Ve9X40Z7FFubDDsP1GUt9gBLaEETlRuHNyVScVi4eoLVzqgqSS2Jy', '2019-03-30 00:21:53', '2019-03-30 00:21:53'),
 (5, 'usuario editado', 'mas@mail.com', NULL, '$2y$10$Ac/7HSUPucInVVNcX5UUC.9Oq.F3rfe3J7zQyMU9YdW7ZgEArSZcC', NULL, '2019-03-30 02:48:40', '2019-03-30 02:54:22'),
 (6, 'preuba de nuevo editado', 'nuevo@mail.com', NULL, '$2y$10$hnZM2TnxiTiOzZX6OQ54XuOFMr/z0HZoES.qNUVbMARYq1IOmqsxC', NULL, '2019-03-30 03:15:15', '2019-03-30 03:16:16'),
-(7, 'usuario', 'uncorreo@mail.com', NULL, '$2y$10$3ZzCUl0ewKNM7rqlT/41T.gh10I5jB/xC65OvePxCSb/LyaOOPuX2', NULL, '2019-03-30 03:57:57', '2019-03-30 03:57:57');
+(7, 'usuario', 'uncorreo@mail.com', NULL, '$2y$10$tVxjNp7U5Cg/c8/m0dIview/CqbzyqgCDCt0TdNW1bPVWLi/57HNy', 'm0ZZDcxvl9DxIxJPR7oKn2QNRrE3CU2QfilyD3vX51Kr9yDyCyAnXcDRzv1i', '2019-03-30 03:57:57', '2019-03-30 22:01:01');
 
 -- --------------------------------------------------------
 
@@ -446,7 +467,7 @@ ALTER TABLE `plants`
 -- AUTO_INCREMENT de la tabla `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
