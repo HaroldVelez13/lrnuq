@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Report;
 use Amranidev\Ajaxis\Ajaxis;
 use URL;
-
+use App\Events\ReportCreated;
 use App\Net;
 
 
@@ -57,7 +57,7 @@ class ReportController extends Controller
         $report->rate_learning = $request->rate_learning;
         $report->net_id = $net;        
         $report->save();       
-
+        event( new ReportCreated($report->id,$user));
         return redirect()->route('user.plant.net.show',['user'=>$user,'plant'=>$plant,'net'=>$net]);
     }
 
@@ -68,15 +68,11 @@ class ReportController extends Controller
      * @param    int  $id
      * @return  \Illuminate\Http\Response
      */
-    public function show($id,Request $request)
+    public function show($user, $plant, $net, Report $report)
     {
-        if($request->ajax())
-        {
-            return URL::to('report/'.$id);
-        }
 
-        $report = Report::findOrfail($id);
-        return view('report.show',compact('report'));
+        $images=$report->images;
+        return view('report.show',compact('net' ,'plant','user','report','images' ) );
     }
 
     /**

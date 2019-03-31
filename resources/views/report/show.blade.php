@@ -1,44 +1,79 @@
 @extends('layouts.lrnuq')
 
-@section('title', 'Informacón de Reporte')
+@section('title', 'Información de Plantas')
 
 @section('content')
-    <div class = 'container'>
-        <h3>Informacón de Reporte</h3>
-        <form method = 'get' action = '{{url("report")}}'>
-            <button class = 'btn blue'>Lista Reportes</button>
-        </form>
-        <table class = 'highlight bordered'>
+<div class="row-breadcrumb"> 
+    <nav class="row">
+        <div class="nav-wrapper grey darken-4">
+          <div class="col s12">
+
+            <a  class="breadcrumb" href="{{route('user.plant.index', ['user' => auth()->user()->id])}}">Lista de Plantas</a>
+
+            <a  class="breadcrumb" href="{{route('user.plant.show', ['user' => auth()->user()->id,'plant'=>$plant])}}">Planta # {{$plant}}</a>
+
+            <a href="{{route('user.plant.net.show', ['user' => auth()->user()->id,'plant'=>$plant,'net'=>$net])}} "class="breadcrumb">Red # {{$net}}</a>
+
+            <a  class="breadcrumb breadcrumb-active">Reporte # {{$report->id}}</a>
+
+            <a href="{{route('user.plant.net.show', ['user' => auth()->user()->id,'plant'=>$plant,'net'=>$net])}}" 
+                class="btn-floating btn-large halfway-fab waves-effect waves-light indigo"
+                title="Volver a la lista">
+            <i class="material-icons">arrow_back</i>
+          </a>
+          </div>
+        </div>
+    </nav>
+</div><article>
+    
+    <section class="card large z-depth-1 ">
+        <blockquote >    
+            <h4 >Reporte</h4>
+        </blockquote>
+        <table class="striped centered">
             <thead>
-                <th>Llave</th>
-                <th>Valor</th>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Tipo</th>
+                  <th>Rate Learning</th>
+                  <th>Itera</th>
+                  <th>Red</th>
+              </tr>
             </thead>
+
             <tbody>
-                <tr>
-                    <td>
-                        <b><i>Nombre : </i></b>
-                    </td>
-                    <td>{{$report->name}}</td>
-                </tr>                
-                <tr>
-                    <td>
-                        <b><i>Tipo : </i></b>
-                    </td>
-                    <td>{{$report->type}}</td>
-                </tr>                
-                <tr>
-                    <td>
-                        <b><i>Itera : </i></b>
-                    </td>
-                    <td>{{$report->itera}}</td>
-                </tr>                
-                <tr>
-                    <td>
-                        <b><i>Rate Learning : </i></b>
-                    </td>
-                    <td>{{$report->rate_learning}}</td>
-                </tr>  
+              <tr>
+                <td>{{$report->name}}</td>
+                <td>{{$report->type}}</td>
+                <td>{{$report->rate_learning}}</td>
+                <td>{{$report->itera}}</td>
+                <td>{{$report->net->name}}</td>
+              </tr>          
             </tbody>
-        </table>
-    </div>
+        </table>             
+        @if(count($images))
+            <div class="carousel"> 
+                @foreach($images as $img)
+                <a class="carousel-item" href="#{{$img->url_name}}">
+                    <img class="materialboxed responsive-img" src="{{asset('images/reports').'/'.$img->url_name}}">
+                </a>               
+                @endforeach()
+            </div>            
+        @else                     
+            <h4 class="center"> No cuenta con Evidencias </4>                
+            
+        @endif 
+    </section>       
+</article>
+
+@endsection
+@section('javascript')
+    @parent  
+    <script  >
+        $(document).ready(function(){
+            $('.materialboxed').materialbox();
+            $('.carousel').carousel();
+  
+        });
+    </script> 
 @endsection 

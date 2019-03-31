@@ -13,6 +13,9 @@ body{
 .lrnuq-bg-color{
 	background-color: rgba(255,255,255,.1);
 }
+.lrnuq-text-color{
+	color: rgba(255,255,255,.1);
+}
 
 .row-breadcrumb{
 	margin-top: 2em;
@@ -79,5 +82,27 @@ body{
 .m-2{
 	margin:2em;
 }
+
+table th, td{ 
+	text-align: left!important;
+}
+
+.sidenav {
+    width: 14em !important;
+}
+
+.icon-large{
+	font-size: 2.5em!important;
+}
+
+.icon-img{
+	background: white;
+	border-color: white;
+	border: .15em solid white;	
+	height: 2.5em;
+	width: auto;
+	margin-right: .5em;
+}
+
 
 

@@ -29,6 +29,8 @@ class Reports extends Migration
         $table->String('itera');
         
         $table->String('rate_learning');
+
+        $table->boolean('completed')->default(false);
         
         /**
          * Foreignkeys section

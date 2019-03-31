@@ -24,78 +24,43 @@
     </nav>
 </div>
 <article class="row">
-    <section class="col s12 m4">
-        <div class="card-panel z-depth-1 lrnuq-bg-color">
-            <h4 class="center">Red</h4>
-            <p class="divider red darken-1"></p>
-            <div class="row">               
-            
-                <p class="net-field col s12">
-                    <label for="name">
-                        <small>Nombre</small> 
-                    </label>
-                    <span id="name"> {{$net->name}} </span>                
-                </p> 
+    <section class="col s12 m6">
+        <div class="card-panel z-depth-1 lrnuq-bg-color ">
+            <blockquote>
+              <h4>Red</h4>
+            </blockquote>
+                        
+            <table  class="responsive-table">
+                <thead>
+                  <tr >
+                      <th>Nombre </th>
+                      <th>Tipo</th>
+                      <th>Aprender</th>
+                      <th>Itera</th>
+                      <th>Tiempo</th>
+                      <th>Muestreo</th>
+                      <th>Referencia</th>
+                      <th>Planta</th>
+                  </tr>
+                </thead>
 
-                <p class="net-field col s12">
-                    <label for="type">
-                        <small>Tipo</small> 
-                    </label>
-                    <span id="type"> {{$net->type}} </span>
-                </p> 
-
-                <p class="net-field col s12">
-                    <label for="rate_learning">
-                        <small>Rate Learning</small> 
-                    </label>
-                    <span id="rate_learning"> {{$net->rate_learning}} </span>
-                </p> 
-
-                <p class="net-field col s12">
-                    <label for="itera">
-                        <small>Itera</small> 
-                    </label>
-                    <span id="itera"> {{$net->itera}} </span>
-                </p> 
-
-                <p class="net-field col s12">
-                    <label for="establishment_time">
-                        <small>Establishment Time</small> 
-                    </label>
-                    <span id="establishment_time"> {{$net->establishment_time}} </span>
-                </p>
-
-                <p class="net-field col s12">
-                    <label for="sampling_time">
-                        <small>Sampling Time</small> 
-                    </label>
-                    <span id="sampling_time"> {{$net->sampling_time}} </span>
-                </p>
-
-                <p class="net-field col s12">
-                    <label for="reference">
-                        <small>Referencia</small> 
-                    </label>
-                    <span id="reference"> {{$net->reference}} </span>
-                </p>
-                <p class="net-field col s12 left">
-                    
-                    
-                    <label for="plant" >
-                        <small>Planta</small> 
-                    </label>
-                    <br>
-                    <br>
-                    <span id="plant">  {{$net->plant->name}} 
-                    </span>
-                    
-                    
-                </p> 
-            </div>    
+                <tbody>
+                  <tr>
+                    <td>{{$net->name}} </td>
+                    <td>{{$net->type}}</td>
+                    <td>{{$net->rate_learning}}</td>
+                    <td>{{$net->itera}}</td>
+                    <td>{{$net->establishment_time}}</td>
+                    <td>{{$net->sampling_time}}</td>
+                    <td>{{$net->reference}}</td>
+                    <td>{{$net->plant->name}}</td>
+                  </tr>                  
+                </tbody>
+            </table> 
                               
         </div>          
-    </section>  
-    <section class="col s12 m8"> 
+    </section>   
+    <section class="col s12 m6"> 
         <ul class="collection ">
 
             <li class="collection-item"> 

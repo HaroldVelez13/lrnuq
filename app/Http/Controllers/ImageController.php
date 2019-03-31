@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Image;
 use Amranidev\Ajaxis\Ajaxis;
 use URL;
+use App\Events\ReportCompleted;
 
 /**
  * Class ImageController.
@@ -47,27 +48,12 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        $image = new Image();
-
-        
-        $image->description = $request->description;
-
-        
-        $image->url_name = $request->url_name;
-
-        
-        
+        $image = new Image();        
+        $image->description = $request->description;        
+        $image->url_name = $request->url_name; 
         $image->save();
 
-        $pusher = App::make('pusher');
-
-        //default pusher notification.
-        //by default channel=test-channel,event=test-event
-        //Here is a pusher notification example when you create a new resource in storage.
-        //you can modify anything you want or use it wherever.
-        $pusher->trigger('test-channel',
-                         'test-event',
-                        ['message' => 'A new image has been created !!']);
+        broadcast( new ReportCompleted($report->id,$user) );
 
         return redirect('image');
     }

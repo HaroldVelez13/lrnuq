@@ -16,7 +16,7 @@
 
             <a  class="breadcrumb breadcrumb-active">Reporte # {{$report->id}}</a>
 
-            <a href="{{route('users.show',['user'=>$users])}}" 
+            <a href="{{route('users.show_net',['user'=>$users,'net'=>$net])}}" 
                 class="btn-floating btn-large halfway-fab waves-effect waves-light indigo"
                 title="Volver a la lista">
             <i class="material-icons">arrow_back</i>
@@ -25,77 +25,46 @@
         </div>
     </nav>
 </div>
-<article class="row">
-    <section class="col s12 m4">
-        <div class="card-panel z-depth-1 lrnuq-bg-color">
-            <h4 class="center">Reporte</h4>
-            <p class="divider red darken-1"></p>
-            <div class="row">               
-            
-                <p class="net-field col s12">
-                    <label for="name">
-                        <small>Nombre</small> 
-                    </label>
-                    <span id="name"> {{$report->name}} </span>                
-                </p> 
+<article>
+    
+    <section class="card large z-depth-1 ">
+        <blockquote >    
+            <h4 >Reporte</h4>
+        </blockquote>
+        <table class="striped centered">
+            <thead>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Tipo</th>
+                  <th>Rate Learning</th>
+                  <th>Itera</th>
+                  <th>Red</th>
+              </tr>
+            </thead>
 
-                <p class="net-field col s12">
-                    <label for="type">
-                        <small>Tipo</small> 
-                    </label>
-                    <span id="type"> {{$report->type}} </span>
-                </p> 
-
-                <p class="net-field col s12">
-                    <label for="rate_learning">
-                        <small>Rate Learning</small> 
-                    </label>
-                    <span id="rate_learning"> {{$report->rate_learning}} </span>
-                </p> 
-
-                <p class="net-field col s12">
-                    <label for="itera">
-                        <small>Itera</small> 
-                    </label>
-                    <span id="itera"> {{$report->itera}} </span>
-                </p>                 
-                <p class="net-field col s12 left">
-                    
-                    
-                    <label for="plant" >
-                        <small>Red</small> 
-                    </label>
-                    <br>
-                    <br>
-                    <span id="plant">  {{$report->net->name}} 
-                    </span>
-                    
-                    
-                </p> 
-            </div>    
-                              
-        </div>          
-    </section>  
-    <section class="col s12 m8">
-        <h4 class="center">Evidencias</h4>
-        <div class="row">   
+            <tbody>
+              <tr>
+                <td>{{$report->name}}</td>
+                <td>{{$report->type}}</td>
+                <td>{{$report->rate_learning}}</td>
+                <td>{{$report->itera}}</td>
+                <td>{{$report->net->name}}</td>
+              </tr>          
+            </tbody>
+        </table>             
         @if(count($images))
-            @foreach($images as $img)
-            <div class="ccol s8 offset-s2  m-2 ">
-                <img class="materialboxed responsive-img" src="{{asset('images/reports').'/'.$img->url_name}}">
-            </div>                
-            @endforeach()            
-        @else
-        <div class="card-panel col s8 offset-s-2">      
-            <p>
-                <strong>{{$report->name}}</strong>
-                No cuenta con Evidencias 
-            </p>                
-        </div>
-        @endif      
-        </div>
-                   
-    </section>      
+            <div class="carousel"> 
+                @foreach($images as $img)
+                <a class="carousel-item" href="#{{$img->url_name}}">
+                    <img class="materialboxed responsive-img" src="{{asset('images/reports').'/'.$img->url_name}}">
+                </a>               
+                @endforeach()
+            </div>            
+        @else                     
+            <<h4 class="center"> No cuenta con Evidencias </4>               
+            
+        @endif 
+    </section>       
 </article>
 
 @endsection
@@ -103,7 +72,9 @@
     @parent  
     <script  >
         $(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
+            $('.materialboxed').materialbox();
+            $('.carousel').carousel();
+  
+        });
     </script> 
 @endsection 

@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'America/Bogota',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,7 +171,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -182,7 +182,7 @@ return [
         Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
         Amranidev\Ajaxis\AjaxisServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-        //Pusher\Laravel\PusherServiceProvider::class,
+        Pusher\Laravel\PusherServiceProvider::class,
         //Vinkla\Pusher\PusherServiceProvider::class,
 
     ],
@@ -233,6 +233,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        //'Vinkla' => Pusher\Facades\Pusher::class,
+        'Pusher' => Pusher\Pusher::class,
         
 
     ],
